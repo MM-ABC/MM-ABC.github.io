@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MM-ABC: Towards Generalist Mobile Manipulation via Seeing, Coordinating and Imagining</title>
+  <meta name="description" content="MM-ABC: Towards Generalist Mobile Manipulation via Seeing, Coordinating and Imagining">
+  <meta name="theme-color" content="#f4f8f9">
+  <meta property="og:title" content="MM-ABC: Towards Generalist Mobile Manipulation via Seeing, Coordinating and Imagining">
+  <meta property="og:description" content="MM-ABC: Towards Generalist Mobile Manipulation via Seeing, Coordinating and Imagining">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mm-abc.github.io/">
+  <meta property="og:image" content="https://mm-abc.github.io/assets/images/hero-scene.webp">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a href="#overview" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#overview" aria-label="MM-ABC home"><img src="./assets/images/mm-abc-logo.svg" alt="MM-ABC" width="492" height="90"></a>
+      <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="section-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="section-nav" aria-label="Page sections">
+        <a href="#overview" aria-current="location">Overview</a><a href="#method">Method</a><a href="#results">Benchmarks</a><a href="#real-world">Real world</a><a href="#data">Dataset</a><a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="overview" class="hero" aria-labelledby="paper-title">
+      <div class="hero-scene"><img src="./assets/images/hero-scene.webp" alt="Birthday Party Setup" width="1674" height="1339" fetchpriority="high" decoding="async"></div>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <h1 id="paper-title"><span class="hero-wordmark"><img src="./assets/images/mm-abc-logo.svg" alt="MM-ABC" width="492" height="90"></span><span class="paper-title">Towards Generalist Mobile Manipulation<br class="desktop-break"> via <span class="accent">Seeing, Coordinating and Imagining</span></span></h1>
+          <div class="byline">
+            <div class="authors" aria-label="Authors">
+              <div class="authors-row"><span>Qiwei Liang<sup>1,2,*,‡</sup></span><span>Guangyu Chen<sup>1,3,*</sup></span><span>Shaolong Zhu<sup>1,3,*</sup></span><span>Zikuan Xiao<sup>1</sup></span><span>Jinxuan Lu<sup>1,2</sup></span><span>Yifan Xie<sup>3</sup></span></div>
+              <div class="authors-row authors-corresponding"><span>Renjing Xu<sup>2,†</sup></span><span>Wenbo Ding<sup>1,3,†</sup></span><span>Tianxing Chen<sup>1,4,†</sup></span></div>
+            </div>
+            <p class="author-notes"><span>* Equal Contribution</span><span>‡ Project Lead</span><span>† Corresponding Authors</span></p>
+            <p class="affiliations"><span><sup>1</sup> Xspark AI</span><span><sup>2</sup> HKUST (Guangzhou)</span><span><sup>3</sup> Tsinghua University</span><span><sup>4</sup> The University of Hong Kong</span></p>
+            <div class="affiliation-logos" role="group" aria-label="Affiliated institutions">
+              <span class="affiliation-logo affiliation-logo--xspark"><img src="./assets/logos/xspark.png" width="6749" height="2951" alt="Xspark AI" decoding="async"></span>
+              <span class="affiliation-logo affiliation-logo--hkust-gz"><img src="./assets/logos/hkust-gz.svg" width="281" height="55" alt="The Hong Kong University of Science and Technology (Guangzhou)" decoding="async"></span>
+              <span class="affiliation-logo affiliation-logo--tsinghua"><img src="./assets/logos/tsinghua.svg" width="256" height="86" alt="Tsinghua University" decoding="async"></span>
+              <span class="affiliation-logo affiliation-logo--hku"><img src="./assets/logos/hku.svg" width="208" height="40" alt="The University of Hong Kong" decoding="async"></span>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-arxiv" id="arxiv-link" role="link" aria-disabled="true" aria-label="arXiv — link pending"><img src="./assets/icons/arxiv.svg" width="19" height="24" alt="" aria-hidden="true"><span>arXiv</span></a>
+            <a class="button button-code-model" href="https://github.com/MM-ABC/MM-ABC" target="_blank" rel="noopener noreferrer" aria-label="Code &amp; Model Zoo"><img class="github-icon" src="./assets/icons/github.svg" width="24" height="24" alt="" aria-hidden="true"><span class="code-label">Code</span><span class="merge-amp" aria-hidden="true">&amp;</span><span class="model-label">Model Zoo</span><img class="huggingface-icon" src="./assets/icons/huggingface.svg" width="30" height="30" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section method-section" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-heading" data-reveal><div><p class="eyebrow">01 / Method</p><h2 id="method-title">See and imagine.<br><span class="muted">Move as one.</span></h2></div></div>
+        <figure class="architecture-figure" data-reveal><div class="figure-topline"><span class="eyebrow">MM-ABC architecture</span></div><img data-inline-svg="architecture" src="./assets/images/architecture.svg" width="468" height="201" loading="lazy" decoding="async" alt="Figure 2. MM-ABC architecture. Left: sparse VLM features condition MM-APT; a training-only future branch receives geometric supervision from frozen VGGT-Omega features. Middle: joint transformer blocks (MM-JiT in the diagram) combine stream-specific transformations with masked attention and read-only perceptual context. Right: action streams communicate within each segment, and far tokens additionally read near tokens. Future queries follow the same temporal ordering but remain isolated from actions."><figcaption>Figure 2. MM-ABC architecture. Left: sparse VLM features condition MM-APT; a training-only future branch receives geometric supervision from frozen VGGT-Omega features. Middle: joint transformer blocks (MM-JiT in the diagram) combine stream-specific transformations with masked attention and read-only perceptual context. Right: action streams communicate within each segment, and far tokens additionally read near tokens. Future queries follow the same temporal ordering but remain isolated from actions.</figcaption></figure>
+        <div class="principles">
+          <article class="principle seeing" data-reveal><div class="card-overline"><span>01</span><span>DeepStack</span></div><h3>Seeing.</h3><p>For seeing, MM-ABC uses a sparse DeepStack interface that injects multi-level VLM features into the action expert, preserving complementary fine-grained and semantic information.</p><div class="seeing-graphic" aria-hidden="true"><div class="feature-layer layer-back"><span>H₃₅</span></div><div class="feature-layer layer-middle"><span>H₁₉, H₂₇</span></div><div class="feature-layer layer-front"><span>H₁₁</span><i></i><i></i><i></i></div></div></article>
+          <article class="principle coordinating" data-reveal><div class="card-overline"><span>02</span><span>MM-APT</span></div><h3>Coordinating.</h3><p>For coordinating, we introduce the Mobile Manipulation Action Prediction Transformer (MM-APT), which maintains separate manipulation and mobile/body streams while enabling cross-stream interaction through masked joint attention.</p><div class="coordination-graphic" aria-hidden="true"><div class="stream stream-arm"><span class="stream-dot"></span>Manipulation<span>58D</span></div><div class="stream-bridge"><i></i><span>↕</span><i></i></div><div class="stream stream-base"><span class="stream-dot"></span>Mobile / body<span>22D</span></div></div></article>
+          <article class="principle imagining" data-reveal><div class="card-overline"><span>03</span><span>World Expert</span></div><h3>Imagining.</h3><p>For imagining, learnable future queries predict geometry-rich representations at sparse horizons under a frozen geometric teacher, capturing workspace evolution and the geometric intent the policy should realize.</p><div class="imagination-graphic" aria-hidden="true"><div class="future-box future-now"><svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="1.2"><path d="m15 27 20-12 20 12v23L35 61 15 50zM15 27l20 12 20-12M35 39v22"/></svg><span>n</span></div><span class="future-arrow">→</span><div class="future-box future-next"><svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="1.2"><path d="m10 32 20-12 20 12v23L30 66 10 55zM10 32l20 12 20-12M30 44v22M25 15l20-12 20 12v23L45 49M25 15l20 12 20-12M45 27v22"/></svg><span>n + 32, n + 64</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="section results-section" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-heading" data-reveal><div><p class="eyebrow">02 / Benchmarks</p><h2 id="results-title">Tested across<br><span>five benchmarks.</span></h2></div></div>
+        <div class="tabs benchmark-tabs" id="benchmark-tabs" role="tablist" aria-label="Simulation benchmarks" data-reveal><button id="tab-ebench" role="tab" data-benchmark="ebench" aria-controls="benchmark-panel" aria-selected="true">EBench</button><button id="tab-robocasa" role="tab" data-benchmark="robocasa" aria-controls="benchmark-panel" aria-selected="false" tabindex="-1">RoboCasa365</button><button id="tab-libero" role="tab" data-benchmark="libero" aria-controls="benchmark-panel" aria-selected="false" tabindex="-1">LIBERO</button><button id="tab-libero-plus" role="tab" data-benchmark="libero-plus" aria-controls="benchmark-panel" aria-selected="false" tabindex="-1">LIBERO-Plus</button><button id="tab-maniskill" role="tab" data-benchmark="maniskill" aria-controls="benchmark-panel" aria-selected="false" tabindex="-1">ManiSkill-HAB</button></div>
+        <div id="benchmark-panel" class="benchmark-panel" role="tabpanel" aria-labelledby="tab-ebench" tabindex="0" data-reveal>
+          <div class="benchmark-summary"><p id="benchmark-context" class="eyebrow">Success rate (%)</p><h3 id="benchmark-name">EBench</h3><p id="benchmark-value" class="benchmark-value">44.71%</p><p id="benchmark-description">We post-train MM-ABC for 100k steps with a batch size of 512. We evaluate a single checkpoint on the official held-out test split, reporting task success and stage-wise progress.</p></div>
+          <div class="benchmark-comparison"><div class="chart-overline"><span>Success rate (%)</span></div><div class="chart-scale" aria-hidden="true"><span>0</span><span>50</span><span>100</span></div><ol id="benchmark-chart" class="comparison-chart">
+            <li class="comparison-row is-ours"><span class="comparison-label">MM-ABC</span><span class="comparison-track"><span class="comparison-fill" style="--bar:44.71%"></span></span><span class="comparison-value">44.71</span></li>
+            <li class="comparison-row"><span class="comparison-label">π₀.₅</span><span class="comparison-track"><span class="comparison-fill" style="--bar:41.41%"></span></span><span class="comparison-value">41.41</span></li>
+            <li class="comparison-row"><span class="comparison-label">InternVLA-A1.5</span><span class="comparison-track"><span class="comparison-fill" style="--bar:34.17%"></span></span><span class="comparison-value">34.17</span></li>
+            <li class="comparison-row"><span class="comparison-label">π₀</span><span class="comparison-track"><span class="comparison-fill" style="--bar:33.72%"></span></span><span class="comparison-value">33.72</span></li>
+            <li class="comparison-row"><span class="comparison-label">GigaBrain-0.7</span><span class="comparison-track"><span class="comparison-fill" style="--bar:33.27%"></span></span><span class="comparison-value">33.27</span></li>
+            <li class="comparison-row"><span class="comparison-label">Cosmos3-Edge</span><span class="comparison-track"><span class="comparison-fill" style="--bar:29.29%"></span></span><span class="comparison-value">29.29</span></li>
+            <li class="comparison-row"><span class="comparison-label">Fast-WAM</span><span class="comparison-track"><span class="comparison-fill" style="--bar:25.64%"></span></span><span class="comparison-value">25.64</span></li>
+            <li class="comparison-row"><span class="comparison-label">X-VLA</span><span class="comparison-track"><span class="comparison-fill" style="--bar:23.72%"></span></span><span class="comparison-value">23.72</span></li>
+          </ol></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="real-world" class="section real-world-section" aria-labelledby="real-world-title"><div class="container">
+      <div class="section-heading" data-reveal><div><p class="eyebrow">03 / Real world</p><h2 id="real-world-title">From the party table<br><span class="muted">to the laboratory.</span></h2></div></div>
+      <div id="task-tabs" class="tabs task-tabs" role="tablist" aria-label="Real-world tasks" data-reveal><button id="tab-birthday" data-task="birthday" role="tab" aria-controls="task-panel" aria-selected="true">Birthday party</button><button id="tab-office" data-task="office" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1">Office</button><button id="tab-kitchen" data-task="kitchen" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1">Kitchen</button><button id="tab-industrial" data-task="industrial" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1">Industrial</button><button id="tab-lab" data-task="lab" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1">Laboratory</button></div>
+      <div id="task-panel" class="task-panel" role="tabpanel" aria-labelledby="tab-birthday" tabindex="0" data-reveal>
+        <div class="task-main"><div class="task-media"><video id="task-video" controls muted loop playsinline preload="none" width="1920" height="1080" poster="./assets/videos/birthday-party-setup.webp" aria-label="Birthday Party Setup"><source src="./assets/videos/birthday-party-setup-3x.mp4" type="video/mp4"></video></div><div class="task-copy"><div class="task-meta"><span id="task-index" class="eyebrow">01 / 05</span><span id="task-playback-speed" class="task-playback-speed">3× speed</span></div><h3 id="task-name">Birthday Party Setup</h3><p id="task-description">The robot picks up a cake from the table directly ahead, carries it to the decorated table on the left, and sets it down. It then picks up a birthday candle, passes it between its two hands, and inserts it into the cake. Finally, it moves beside the table and turns on the speaker to play music.</p><div class="task-score"><strong id="task-rate">75%</strong><span>Success rate (%)</span></div></div></div>
+        <figure class="task-sequence"><img id="task-strip" src="./assets/images/task-birthday.webp" width="2448" height="384" alt="Birthday Party Setup" loading="lazy" decoding="async"></figure>
+      </div>
+    </div></section>
+
+    <section id="data" class="section data-section" aria-labelledby="data-title"><div class="container">
+      <div class="section-heading" data-reveal><div><p class="eyebrow">04 / Dataset</p><h2 id="data-title">Many embodiments.<br><span class="muted">A shared action space.</span></h2></div></div>
+      <div class="data-stats" data-reveal><div><strong>5,000<span>+</span></strong><span>Hours</span></div><div><strong>400K<span>+</span></strong><span>Episodes</span></div><div><strong>12</strong><span>Datasets</span></div><div><strong>17</strong><span>Embodiments</span></div></div>
+      <figure class="data-figure" data-reveal><img data-inline-svg="pretraining" src="./assets/images/pretraining.svg" alt="Figure 3. Overview of the MM-ABC multi-embodiment pretraining corpus. The corpus contains 5,166.2 cleaned hours from 12 datasets and 51 subsets, spanning 17 embodiments. Sector areas show training sampling probabilities aggregated by dataset; the surrounding panels illustrate environments and embodiments." width="468" height="206" loading="lazy" decoding="async"></figure>
+      <div class="mm30-card" data-reveal><div class="mm30-copy"><span class="eyebrow">MM-30</span><h3>Base, lift, and arms.<br>Moving together.</h3><p>To complement public datasets, we collect MM-30, a real-world mobile manipulation dataset with coordinated base, lift, and dual-arm motion.</p><div class="mm30-stats"><div><strong>30+</strong><span>Hours</span></div><div><strong>40+</strong><span>Tasks</span></div><div><strong>450+</strong><span>Objects</span></div></div></div><div class="mm30-visual"><img data-inline-svg="mm30" src="./assets/images/mm30.svg" width="469" height="267" loading="lazy" decoding="async" alt="Figure 5. MM-30: self-collected mobile manipulation dataset. Representative tasks, object and scene diversity, and episode counts per task."></div></div>
+    </div></section>
+
+    <section id="citation" class="section citation-section" aria-labelledby="citation-title"><div class="container citation-layout" data-reveal><div class="citation-intro"><p class="eyebrow">05 / Citation</p><h2 id="citation-title">Build on<br><span class="muted">MM-ABC.</span></h2><p>MM-ABC: Towards Generalist Mobile Manipulation via Seeing, Coordinating and Imagining</p></div><div class="citation-card"><div class="citation-toolbar"><span>BibTeX</span><button id="copy-citation" type="button">Copy citation <span aria-hidden="true">⧉</span></button></div><pre><code id="bibtex">@misc{liang2026mmabc,
+  title   = {MM-ABC: Towards Generalist Mobile Manipulation
+             via Seeing, Coordinating and Imagining},
+  author  = {Liang, Qiwei and Chen, Guangyu and
+             Zhu, Shaolong and Xiao, Zikuan and
+             Lu, Jinxuan and Xie, Yifan and Xu, Renjing and
+             Ding, Wenbo and Chen, Tianxing},
+  year    = {2026},
+  url     = {https://mm-abc.github.io/}
+}</code></pre><span id="copy-status" class="copy-status" role="status" aria-live="polite"></span></div></div></section>
+  </main>
+</body>
+</html>
