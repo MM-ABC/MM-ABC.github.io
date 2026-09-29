@@ -68,16 +68,16 @@ sup { color: var(--teal); font-size: .66em; margin-left: 2px; }
 .affiliation-logo--xspark img { position: absolute; top: -95.944610%; left: -41.238507%; width: 182.504056%; height: auto; max-width: none; }
 .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; margin-top: var(--hero-actions-gap); }
 .button { display: inline-flex; justify-content: center; align-items: center; gap: 11px; border-radius: 999px; min-height: 49px; padding: 12px 22px; font-size: 14px; font-weight: 550; transition: box-shadow .2s, transform .2s; }
+.hero-actions .button { min-height: 54px; white-space: nowrap; }
 .button > svg { width: 17px; height: 17px; }
 .button > img { flex-shrink: 0; }
 .button-arxiv { min-width: 126px; color: #fff; background: #b31b1b; }
 .button-arxiv img { width: 18px; height: 23px; }
 .button[aria-disabled="true"] { cursor: default; }
-.button-code-model { gap: 10px; min-width: 268px; color: #fff; background: linear-gradient(105deg, #1c1c1e 0%, #292822 36%, #8c793a 53%, #eac34e 69%, #ffda65 100%); box-shadow: inset 0 0 0 1px rgb(25 25 25 / 8%); }
-.button-code-model .github-icon { width: 23px; height: 23px; }
-.button-code-model .huggingface-icon { width: 30px; height: 30px; }
-.button-code-model .merge-amp { margin-inline: 5px; color: #fff3c2; font-weight: 400; }
-.button-code-model .model-label { color: #342904; }
+.button-code { min-width: 126px; color: #fff; background: #1c1c1e; }
+.button-code .github-icon { width: 23px; height: 23px; }
+.button-huggingface { min-width: 176px; color: #342904; background: #ffda65; box-shadow: inset 0 0 0 1px rgb(25 25 25 / 8%); }
+.button-huggingface .huggingface-icon { width: 30px; height: 30px; }
 .button[href]:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgb(42 47 42 / 12%); }
 .text-link { display: inline-flex; align-items: center; gap: 17px; color: var(--teal); font-size: 13px; font-weight: 600; }
 .text-link span { transition: transform .2s; }
@@ -290,13 +290,14 @@ sup { color: var(--teal); font-size: .66em; margin-left: 2px; }
   .author-notes { gap: 4px 14px; font-size: 10px; }
   .affiliation-logos { --logo-height: min(32px, calc((100vw - 72px) / 10.4)); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; width: min(400px, 100%); }
   .affiliation-logo { width: calc(var(--logo-height) * var(--logo-ratio)); height: var(--logo-height); justify-self: center; }
-  .hero-actions { gap: 10px; }
+  .hero-actions { gap: 8px; }
   .button { padding: 11px 14px; font-size: 12px; gap: 8px; }
-  .button-arxiv { min-width: 104px; }
-  .button-code-model { min-width: 224px; gap: 7px; }
-  .button-code-model .github-icon { width: 21px; height: 21px; }
-  .button-code-model .huggingface-icon { width: 27px; height: 27px; }
-  .button-code-model .merge-amp { margin-inline: 2px; }
+  .hero-actions .button { min-height: 49px; }
+  .button-arxiv { min-width: 92px; }
+  .button-code { min-width: 92px; }
+  .button-code .github-icon { width: 21px; height: 21px; }
+  .button-huggingface { min-width: 140px; }
+  .button-huggingface .huggingface-icon { width: 27px; height: 27px; }
   .section-heading .eyebrow { font-size: 9px; margin-bottom: 16px; }
   .section-heading h2 { font-size: clamp(30px, 9vw, 35px); }
   .principles { grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
