@@ -76,7 +76,7 @@ sup { color: var(--teal); font-size: .66em; margin-left: 2px; }
 .button[aria-disabled="true"] { cursor: default; }
 .button-code { min-width: 126px; color: #fff; background: #1c1c1e; }
 .button-code .github-icon { width: 23px; height: 23px; }
-.button-huggingface { min-width: 176px; color: #342904; background: #ffda65; box-shadow: inset 0 0 0 1px rgb(25 25 25 / 8%); }
+.button-huggingface { color: #342904; background: #ffda65; box-shadow: inset 0 0 0 1px rgb(25 25 25 / 8%); }
 .button-huggingface .huggingface-icon { width: 30px; height: 30px; }
 .button[href]:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgb(42 47 42 / 12%); }
 .text-link { display: inline-flex; align-items: center; gap: 17px; color: var(--teal); font-size: 13px; font-weight: 600; }
@@ -296,7 +296,6 @@ sup { color: var(--teal); font-size: .66em; margin-left: 2px; }
   .button-arxiv { min-width: 92px; }
   .button-code { min-width: 92px; }
   .button-code .github-icon { width: 21px; height: 21px; }
-  .button-huggingface { min-width: 140px; }
   .button-huggingface .huggingface-icon { width: 27px; height: 27px; }
   .section-heading .eyebrow { font-size: 9px; margin-bottom: 16px; }
   .section-heading h2 { font-size: clamp(30px, 9vw, 35px); }
